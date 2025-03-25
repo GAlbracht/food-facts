@@ -1,7 +1,7 @@
 {
-  "driver": "ODBC Driver 17 for SQL Server",
+  "driver": "ODBC Driver 18 for SQL Server",
   "server": "localhost,1433",
   "database": "OpenFood",
   "username": "sa",
-  "password": "YourStrong!Passw0rd"
+  "password": "StrongPassw0rd!"
 }

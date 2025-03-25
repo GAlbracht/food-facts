@@ -4,7 +4,7 @@ import pyodbc
 import json
 
 def load_to_sqlserver():
-    with open("config/sqlserver_config.json") as f:
+    with open("E:\\Projects\\Project1\\open-food-facts-bi\\config\\sqlserver_config.json") as f:
         cfg = json.load(f)
 
     conn_str = (
@@ -12,6 +12,7 @@ def load_to_sqlserver():
         f"SERVER={cfg['server']};"
         f"UID={cfg['username']};"
         f"PWD={cfg['password']}"
+        f"Encrypt=no;TrustServerCertificate=yes;"
     )
     conn = pyodbc.connect(conn_str, autocommit=True)
     cursor = conn.cursor()
@@ -53,4 +54,4 @@ def load_to_sqlserver():
     conn.commit()
     cursor.close()
     conn.close()
-    print("✅ Loaded data into SQL Server.")
+    print("Loaded data into SQL Server.")
